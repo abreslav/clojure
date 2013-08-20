@@ -10,6 +10,8 @@
 
 package clojure.lang;
 
+import kotlin.collections.persistent.facade.PQueue;
+
 import java.util.Collection;
 import java.util.Iterator;
 //import java.util.concurrent.ConcurrentLinkedQueue;
@@ -21,7 +23,7 @@ import java.util.Iterator;
  * so no reversing or suspensions required for persistent use
  */
 
-public class PersistentQueue extends Obj implements IPersistentList, Collection, Counted, IHashEq{
+public class PersistentQueue extends Obj implements PQueue, IPersistentList, Collection, Counted, IHashEq{
 
 final public static PersistentQueue EMPTY = new PersistentQueue(null, 0, null, null);
 

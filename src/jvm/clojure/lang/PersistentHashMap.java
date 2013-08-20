@@ -10,6 +10,8 @@
 
 package clojure.lang;
 
+import kotlin.collections.persistent.facade.PMapEditable;
+
 import java.io.Serializable;
 import java.util.*;
 import java.util.concurrent.Callable;
@@ -25,7 +27,7 @@ import java.util.concurrent.atomic.AtomicReference;
  Any errors are my own
  */
 
-public class PersistentHashMap extends APersistentMap implements IEditableCollection, IObj {
+public class PersistentHashMap extends APersistentMap implements PMapEditable, IEditableCollection, IObj {
 
 final int count;
 final INode root;

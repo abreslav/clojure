@@ -12,12 +12,14 @@
 
 package clojure.lang;
 
+import kotlin.collections.persistent.facade.PSet;
+
 import java.io.Serializable;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.Set;
 
-public abstract class APersistentSet extends AFn implements IPersistentSet, Collection, Set, Serializable, IHashEq {
+public abstract class APersistentSet extends AFn implements PSet, IPersistentSet, Collection, Set, Serializable, IHashEq {
 int _hash = -1;
 int _hasheq = -1;
 final IPersistentMap impl;
