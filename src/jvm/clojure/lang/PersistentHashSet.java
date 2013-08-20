@@ -12,9 +12,11 @@
 
 package clojure.lang;
 
+import kotlin.collections.persistent.facade.PSetEditable;
+
 import java.util.List;
 
-public class PersistentHashSet extends APersistentSet implements IObj, IEditableCollection {
+public class PersistentHashSet extends APersistentSet implements PSetEditable, IObj, IEditableCollection {
 
 static public final PersistentHashSet EMPTY = new PersistentHashSet(null, PersistentHashMap.EMPTY);
 
@@ -107,7 +109,7 @@ public PersistentHashSet withMeta(IPersistentMap meta){
 	return new PersistentHashSet(meta, impl);
 }
 
-public ITransientCollection asTransient() {
+public ITransientSet asTransient() {
 	return new TransientHashSet(((PersistentHashMap) impl).asTransient());
 }
 

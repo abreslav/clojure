@@ -12,12 +12,14 @@
 
 package clojure.lang;
 
+import kotlin.collections.persistent.facade.PVectorEditable;
+
 import java.io.Serializable;
 import java.util.Iterator;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicReference;
 
-public class PersistentVector extends APersistentVector implements IObj, IEditableCollection{
+public class PersistentVector extends APersistentVector implements PVectorEditable, IObj, IEditableCollection{
 
 public static class Node implements Serializable {
 	transient public final AtomicReference<Thread> edit;

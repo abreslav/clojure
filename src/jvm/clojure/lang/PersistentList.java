@@ -10,10 +10,12 @@
 
 package clojure.lang;
 
+import kotlin.collections.persistent.facade.PList;
+
 import java.io.Serializable;
 import java.util.*;
 
-public class PersistentList extends ASeq implements IPersistentList, IReduce, List, Counted {
+public class PersistentList extends ASeq implements PList, IPersistentList, IReduce, List, Counted {
 
 private final Object _first;
 private final IPersistentList _rest;
@@ -126,7 +128,7 @@ public Object reduce(IFn f, Object start) {
 }
 
 
-    static class EmptyList extends Obj implements IPersistentList, List, ISeq, Counted{
+    static class EmptyList extends Obj implements PList, IPersistentList, List, ISeq, Counted{
 
 	public int hashCode(){
 		return 1;

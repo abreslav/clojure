@@ -10,6 +10,8 @@
 
 package clojure.lang;
 
+import kotlin.collections.persistent.facade.PMapEditable;
+
 import java.io.Serializable;
 import java.util.Arrays;
 import java.util.Iterator;
@@ -26,7 +28,7 @@ import java.util.Map;
  * null keys and values are ok, but you won't be able to distinguish a null value via valAt - use contains/entryAt
  */
 
-public class PersistentArrayMap extends APersistentMap implements IObj, IEditableCollection {
+public class PersistentArrayMap extends APersistentMap implements PMapEditable, IObj, IEditableCollection {
 
 final Object[] array;
 static final int HASHTABLE_THRESHOLD = 16;

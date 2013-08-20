@@ -12,9 +12,11 @@
 
 package clojure.lang;
 
+import kotlin.collections.persistent.facade.PSeq;
+
 import java.util.*;
 
-public final class LazySeq extends Obj implements ISeq, Sequential, List, IPending, IHashEq{
+public final class LazySeq extends Obj implements PSeq, ISeq, Sequential, List, IPending, IHashEq{
 
 private IFn fn;
 private Object sv;

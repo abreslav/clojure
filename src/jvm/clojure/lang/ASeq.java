@@ -10,10 +10,12 @@
 
 package clojure.lang;
 
+import kotlin.collections.persistent.facade.PSeq;
+
 import java.io.Serializable;
 import java.util.*;
 
-public abstract class ASeq extends Obj implements ISeq, Sequential, List, Serializable, IHashEq {
+public abstract class ASeq extends Obj implements PSeq, ISeq, Sequential, List, Serializable, IHashEq {
 transient int _hash = -1;
 transient int _hasheq = -1;
 

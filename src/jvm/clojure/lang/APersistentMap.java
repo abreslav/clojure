@@ -10,10 +10,12 @@
 
 package clojure.lang;
 
+import kotlin.collections.persistent.facade.PMap;
+
 import java.io.Serializable;
 import java.util.*;
 
-public abstract class APersistentMap extends AFn implements IPersistentMap, Map, Iterable, Serializable, MapEquivalence, IHashEq {
+public abstract class APersistentMap extends AFn implements PMap, IPersistentMap, Map, Serializable, MapEquivalence, IHashEq {
 int _hash = -1;
 int _hasheq = -1;
 

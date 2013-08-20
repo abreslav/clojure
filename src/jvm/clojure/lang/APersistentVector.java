@@ -12,10 +12,13 @@
 
 package clojure.lang;
 
+import kotlin.collections.persistent.facade.PVector;
+
 import java.io.Serializable;
 import java.util.*;
 
-public abstract class APersistentVector extends AFn implements IPersistentVector, Iterable,
+public abstract class APersistentVector extends AFn implements PVector,
+                                                               IPersistentVector, Iterable,
                                                                List,
                                                                RandomAccess, Comparable,
                                                                Serializable, IHashEq {
