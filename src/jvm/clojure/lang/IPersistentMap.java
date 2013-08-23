@@ -11,7 +11,9 @@
 package clojure.lang;
 
 
-public interface IPersistentMap extends Iterable, Associative, Counted{
+import kotlin.collections.persistent.KPersistentMap;
+
+public interface IPersistentMap extends Iterable, Associative, Counted, KPersistentMap {
 
 
 IPersistentMap assoc(Object key, Object val);

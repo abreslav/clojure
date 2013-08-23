@@ -12,7 +12,9 @@
 
 package clojure.lang;
 
-public interface IPersistentStack extends IPersistentCollection{
+import kotlin.collections.persistent.KPersistentStack;
+
+public interface IPersistentStack extends IPersistentCollection, KPersistentStack {
 Object peek();
 
 IPersistentStack pop();

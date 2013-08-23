@@ -1,5 +1,7 @@
 package clojure.lang;
 
+import kotlin.collections.persistent.KPersistentCollection;
+
 /**
  * Copyright (c) Rich Hickey. All rights reserved.
  * The use and distribution terms for this software are covered by the
@@ -11,7 +13,7 @@ package clojure.lang;
  */
 
 
-public interface IPersistentCollection extends Seqable {
+public interface IPersistentCollection extends Seqable, KPersistentCollection {
 
 int count();
 

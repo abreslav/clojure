@@ -1,5 +1,7 @@
 package clojure.lang;
 
+import kotlin.collections.persistent.KAssociative;
+
 /**
  * Copyright (c) Rich Hickey. All rights reserved.
  * The use and distribution terms for this software are covered by the
@@ -9,7 +11,7 @@ package clojure.lang;
  * the terms of this license.
  * You must not remove this notice, or any other, from this software.
  */
-public interface Associative extends IPersistentCollection, ILookup{
+public interface Associative extends IPersistentCollection, ILookup, KAssociative {
 boolean containsKey(Object key);
 
 IMapEntry entryAt(Object key);

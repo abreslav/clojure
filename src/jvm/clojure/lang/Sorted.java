@@ -12,9 +12,11 @@
 
 package clojure.lang;
 
+import kotlin.collections.persistent.KSorted;
+
 import java.util.Comparator;
 
-public interface Sorted{
+public interface Sorted extends KSorted {
 Comparator comparator();
 
 Object entryKey(Object entry);

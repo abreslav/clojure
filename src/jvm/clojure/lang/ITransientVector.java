@@ -12,7 +12,9 @@
 
 package clojure.lang;
 
-public interface ITransientVector extends ITransientAssociative, Indexed{
+import kotlin.collections.persistent.KTransientVector;
+
+public interface ITransientVector extends ITransientAssociative, Indexed, KTransientVector {
 
 ITransientVector assocN(int i, Object val);
 

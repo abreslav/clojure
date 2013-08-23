@@ -12,6 +12,8 @@
 
 package clojure.lang;
 
-public interface Seqable {
+import kotlin.collections.persistent.KSeqable;
+
+public interface Seqable extends KSeqable {
     ISeq seq();
 }

@@ -10,7 +10,9 @@
 
 package clojure.lang;
 
-public interface IndexedSeq extends ISeq, Sequential, Counted{
+import kotlin.collections.persistent.KIndexedSeq;
+
+public interface IndexedSeq extends ISeq, Sequential, Counted, KIndexedSeq {
 
 public int index();
 }

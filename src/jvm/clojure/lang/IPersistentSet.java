@@ -12,7 +12,9 @@
 
 package clojure.lang;
 
-public interface IPersistentSet extends IPersistentCollection, Counted{
+import kotlin.collections.persistent.KPersistentSet;
+
+public interface IPersistentSet extends IPersistentCollection, Counted, KPersistentSet {
 	public IPersistentSet disjoin(Object key) ;
 	public boolean contains(Object key);
 	public Object get(Object key);

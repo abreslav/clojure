@@ -12,7 +12,9 @@
 
 package clojure.lang;
 
-public interface ILookup{
+import kotlin.collections.persistent.KLookup;
+
+public interface ILookup extends KLookup {
 Object valAt(Object key);
 
 Object valAt(Object key, Object notFound);

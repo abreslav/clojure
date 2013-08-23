@@ -12,7 +12,9 @@
 
 package clojure.lang;
 
-public interface ITransientMap extends ITransientAssociative, Counted{
+import kotlin.collections.persistent.KTransientMap;
+
+public interface ITransientMap extends ITransientAssociative, Counted, KTransientMap {
 	
 ITransientMap assoc(Object key, Object val);
 

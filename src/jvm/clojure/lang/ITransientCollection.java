@@ -12,7 +12,9 @@
 
 package clojure.lang;
 
-public interface ITransientCollection{
+import kotlin.collections.persistent.KTransientCollection;
+
+public interface ITransientCollection extends KTransientCollection {
 
 ITransientCollection conj(Object val);
 
