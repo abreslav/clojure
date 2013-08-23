@@ -66,8 +66,8 @@ public fun <T> KRef<T>.ensure(): T {
 
 // Delegated properties
 
-fun ref<T>(value: T, validator: ((T) -> Boolean)? = null): KRef<T> {
-    val result = Ref(value)
+fun ref<T>(value: T, preventWriteSkew: Boolean = false, validator: ((T) -> Boolean)? = null): KRef<T> {
+    val result = if (preventWriteSkew) NoWriteSkewRef(value) else Ref(value)
     if (validator != null) {
         result.setValidator(object : AFn() {
             override fun invoke(p: Any?): Any? {
