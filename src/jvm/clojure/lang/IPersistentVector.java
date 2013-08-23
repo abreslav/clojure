@@ -1,5 +1,7 @@
 package clojure.lang;
 
+import kotlin.collections.persistent.KPersistentVector;
+
 /**
  * Copyright (c) Rich Hickey. All rights reserved.
  * The use and distribution terms for this software are covered by the
@@ -10,7 +12,7 @@ package clojure.lang;
  * You must not remove this notice, or any other, from this software.
  */
 
-public interface IPersistentVector extends Associative, Sequential, IPersistentStack, Reversible, Indexed{
+public interface IPersistentVector extends Associative, Sequential, IPersistentStack, Reversible, Indexed, KPersistentVector {
 int length();
 
 IPersistentVector assocN(int i, Object val);

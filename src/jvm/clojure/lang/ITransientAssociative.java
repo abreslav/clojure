@@ -12,7 +12,9 @@
 
 package clojure.lang;
 
-public interface ITransientAssociative extends ITransientCollection, ILookup{
+import kotlin.collections.persistent.KTransientAssociative;
+
+public interface ITransientAssociative extends ITransientCollection, ILookup, KTransientAssociative {
 
 ITransientAssociative assoc(Object key, Object val);
 }

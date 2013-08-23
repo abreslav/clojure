@@ -11,6 +11,8 @@
 package clojure.lang;
 
 
-public interface IPersistentList extends Sequential, IPersistentStack{
+import kotlin.collections.persistent.KPersistentList;
+
+public interface IPersistentList extends Sequential, IPersistentStack, KPersistentList {
 
 }

@@ -12,6 +12,8 @@
 
 package clojure.lang;
 
-public interface IEditableCollection{
+import kotlin.collections.persistent.KEditableCollection;
+
+public interface IEditableCollection extends KEditableCollection {
 ITransientCollection asTransient();
 }

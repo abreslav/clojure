@@ -10,9 +10,11 @@
 
 package clojure.lang;
 
+import kotlin.collections.persistent.KMapEntry;
+
 import java.util.Map;
 
-public interface IMapEntry extends Map.Entry{
+public interface IMapEntry extends Map.Entry, KMapEntry {
 Object key();
 
 Object val();

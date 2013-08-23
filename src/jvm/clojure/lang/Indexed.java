@@ -12,7 +12,9 @@
 
 package clojure.lang;
 
-public interface Indexed extends Counted{
+import kotlin.collections.persistent.KIndexed;
+
+public interface Indexed extends Counted, KIndexed {
 Object nth(int i);
 
 Object nth(int i, Object notFound);

@@ -12,6 +12,8 @@
 
 package clojure.lang;
 
-public interface Reversible{
+import kotlin.collections.persistent.KReversible;
+
+public interface Reversible extends KReversible {
 ISeq rseq() ;
 }
