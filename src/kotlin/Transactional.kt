@@ -13,6 +13,18 @@ public trait KRef<T> : KDeref<T> {
     fun <T1: T> set(value: T1): T1
 }
 
+fun <T> KRef<T>.validate(value: T): Boolean {
+    val validator = (this as Ref).getValidator()
+    if (validator == null) return true
+    return validator.invoke(value) as Boolean
+}
+
+fun <T> KRef<T>.setIfValid(value: T): Boolean {
+    if (!validate(value)) return false
+    set(value)
+    return true
+}
+
 public fun <T, R: T> KRef<T>.alter(f: (KRef<T>) -> R): R {
     return set(f(this))
 }
