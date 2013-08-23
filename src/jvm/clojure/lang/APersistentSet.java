@@ -34,8 +34,8 @@ public boolean contains(Object key){
 	return impl.containsKey(key);
 }
 
-public Object get(Object key){
-	return impl.valAt(key);
+public boolean get(Object key){
+	return (Boolean) impl.valAt(key);
 }
 
 public int count(){
