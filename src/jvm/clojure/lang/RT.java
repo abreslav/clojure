@@ -444,6 +444,7 @@ static public void load(String scriptbase, boolean failIfNotFound) throws IOExce
 }
 
 static void doInit() throws ClassNotFoundException, IOException{
+    if (true) return;
 	load("clojure/core");
 
 	Var.pushThreadBindings(
