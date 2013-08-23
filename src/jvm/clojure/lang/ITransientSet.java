@@ -17,5 +17,5 @@ import kotlin.collections.persistent.KTransientSet;
 public interface ITransientSet extends ITransientCollection, Counted, KTransientSet {
 	public ITransientSet disjoin(Object key) ;
 	public boolean contains(Object key);
-	public Object get(Object key);
+	public boolean get(Object key);
 }
