@@ -25,34 +25,34 @@ fun <T> KRef<T>.setIfValid(value: T): Boolean {
     return true
 }
 
-public fun <T, R: T> KRef<T>.alter(f: (KRef<T>) -> R): R {
-    return set(f(this))
+public fun <T, R: T> KRef<T>.alter(f: (T) -> R): R {
+    return set(f(this.deref()))
 }
 
-public fun <T, P1, R: T> KRef<T>.alter(f: (KRef<T>, P1) -> R, p1: P1): R {
-    return set(f(this, p1))
+public fun <T, P1, R: T> KRef<T>.alter(f: (T, P1) -> R, p1: P1): R {
+    return set(f(this.deref(), p1))
 }
 
-public fun <T, P1, P2, R: T> KRef<T>.alter(f: (KRef<T>, P1, P2) -> R, p1: P1, p2: P2): R {
-    return set(f(this, p1, p2))
+public fun <T, P1, P2, R: T> KRef<T>.alter(f: (T, P1, P2) -> R, p1: P1, p2: P2): R {
+    return set(f(this.deref(), p1, p2))
 }
 
-public fun <T, R: T> KRef<T>.commute(f: (KRef<T>) -> R): R {
+public fun <T, R: T> KRef<T>.commute(f: (T) -> R): R {
     return (this as Ref).commute(
             object : AFn() {
-                override fun invoke(): Any? {
-                    return f(this@commute)
+                override fun invoke(arg1: Any?): Any? {
+                    return f(arg1 as T)
                 }
             },
             PersistentList.EMPTY
     ) as R
 }
 
-public fun <T, P1, R: T> KRef<T>.commute(f: (KRef<T>, P1) -> R, p1: P1): R {
+public fun <T, P1, R: T> KRef<T>.commute(f: (T, P1) -> R, p1: P1): R {
     return (this as Ref).commute(
             object : AFn() {
-                override fun invoke(p: Any?): Any? {
-                    return f(this@commute, p as P1)
+                override fun invoke(arg1: Any?, arg2: Any?): Any? {
+                    return f(arg1 as T, arg2 as P1)
                 }
             },
             list(p1) as ISeq
