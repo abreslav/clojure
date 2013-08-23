@@ -12,11 +12,13 @@
 
 package clojure.lang;
 
+import kotlin.transactional.KRef;
+
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 
-public class Ref extends ARef implements IFn, Comparable<Ref>, IRef{
+public class Ref extends ARef implements IFn, Comparable<Ref>, IRef, KRef {
     public int compareTo(Ref ref) {
         if(this.id == ref.id)
             return 0;
