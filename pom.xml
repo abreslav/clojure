@@ -80,6 +80,7 @@
     </resources>
       <sourceDirectory>src/kotlin</sourceDirectory>
     <testSourceDirectory>test/java</testSourceDirectory>
+    <testSourceDirectory>test/kotlin</testSourceDirectory>
     <plugins>
       <plugin>
 	<groupId>org.apache.maven.plugins</groupId>
